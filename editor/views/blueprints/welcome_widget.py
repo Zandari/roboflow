@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'welcome_widget.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -22,13 +22,22 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(647, 403)
+        Form.resize(541, 408)
         self.create_button = QPushButton(Form)
         self.create_button.setObjectName(u"create_button")
-        self.create_button.setGeometry(QRect(70, 30, 80, 24))
-        self.recent_widget = QListWidget(Form)
-        self.recent_widget.setObjectName(u"recent_widget")
-        self.recent_widget.setGeometry(QRect(70, 90, 481, 192))
+        self.create_button.setGeometry(QRect(310, 70, 171, 24))
+        self.recent_list = QListWidget(Form)
+        self.recent_list.setObjectName(u"recent_list")
+        self.recent_list.setGeometry(QRect(10, 10, 241, 381))
+        self.open_button = QPushButton(Form)
+        self.open_button.setObjectName(u"open_button")
+        self.open_button.setGeometry(QRect(310, 170, 171, 24))
+        self.import_button = QPushButton(Form)
+        self.import_button.setObjectName(u"import_button")
+        self.import_button.setGeometry(QRect(310, 110, 171, 24))
+        self.close_button = QPushButton(Form)
+        self.close_button.setObjectName(u"close_button")
+        self.close_button.setGeometry(QRect(310, 310, 171, 24))
 
         self.retranslateUi(Form)
 
@@ -37,6 +46,9 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.create_button.setText(QCoreApplication.translate("Form", u"Create", None))
+        self.create_button.setText(QCoreApplication.translate("Form", u"Create New Project", None))
+        self.open_button.setText(QCoreApplication.translate("Form", u"Open Selected Project", None))
+        self.import_button.setText(QCoreApplication.translate("Form", u"Import Project", None))
+        self.close_button.setText(QCoreApplication.translate("Form", u"Close", None))
     # retranslateUi
 

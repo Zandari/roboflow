@@ -1,4 +1,5 @@
 from .abstract_storage import AbstractStorage
+from datetime import date, datetime
 import json
 import os
 
@@ -32,7 +33,7 @@ class JsonFileStorage(AbstractStorage):
     ) -> dict:
         try:
             with open(self._get_file_path(record_name), "r") as file:
-                return json.load(file)
+                return json.load(file, object_hook=self._json_deserial)
         except (FileNotFoundError, json.JSONDecodeError) as e:
             if not default:
                 raise e
@@ -46,5 +47,25 @@ class JsonFileStorage(AbstractStorage):
         with open(self._get_file_path(record_name), "w") as file:
             json.dump(
                 obj=data,
-                fp=file
+                fp=file,
+                default=self._json_serial
             )
+    @staticmethod
+    def _json_deserial(data: dict) -> dict:
+        result = dict()
+
+        for key, value in data.items():
+            if isinstance(value, str) and value.startswith("<date>"):
+                result[key] = datetime.fromisoformat(
+                    value.lstrip("<date>")
+                )
+            else:
+                result[key] = value
+
+        return result
+
+    @staticmethod
+    def _json_serial(obj):
+        if isinstance(obj, (datetime, date)):
+            return f"<date>{obj.isoformat()}"
+        raise TypeError ("Type %s not serializable" % type(obj))

@@ -9,7 +9,7 @@ class _Store:
 
 class ConfigDataStore(BaseDataStore):
     _RECORD_NAME = "config"
-    _DEFAULT_RECORD = asdict(_Store(...))
-    _STORE_DATACLASS = _Store
+    _DEFAULT_RECORD = asdict(_Store())
+    _STORE_MODEL = _Store
 
     ...

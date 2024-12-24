@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>647</width>
-    <height>403</height>
+    <width>541</width>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,24 +16,63 @@
   <widget class="QPushButton" name="create_button">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>30</y>
-     <width>80</width>
+     <x>310</x>
+     <y>70</y>
+     <width>171</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
-    <string>Create</string>
+    <string>Create New Project</string>
    </property>
   </widget>
-  <widget class="QListView" name="recent_view">
+  <widget class="QListWidget" name="recent_list">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>90</y>
-     <width>511</width>
-     <height>261</height>
+     <x>10</x>
+     <y>10</y>
+     <width>241</width>
+     <height>381</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_button">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>170</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open Selected Project</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="import_button">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>110</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Import Project</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close_button">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>310</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
    </property>
   </widget>
  </widget>

@@ -33,6 +33,7 @@ class ProjectManager:
 
     def create_project(self, file_path: str | os.PathLike):
         self._current_project = self._DEFAULT_PROJECT
+        print(self._current_project)
         with open(file_path, 'w') as file:
             file.write(self._current_project.to_xml())
         self._file_path = file_path

@@ -198,7 +198,12 @@ class XMLModel(BaseModel, XMLSerializable):
             field_type = fields[name]
 
             if isinstance(field_type, XmlAttr):
-                root.attrib[name] = str(value)
+                root.attrib[name] = str(field_type.attr_type(value))
+
+            elif isinstance(value, Enum):
+                el = ET.Element(name)
+                el.text = str(value.value)
+                root.append(el)
 
             elif isinstance(field_type, Container):
                 cont_el = ET.Element(name)
@@ -220,7 +225,7 @@ class XMLModel(BaseModel, XMLSerializable):
 
             else:
                 el = ET.Element(name)
-                el.text = str(value)
+                el.text = str(field_type(value))
                 root.append(el)
 
         return root

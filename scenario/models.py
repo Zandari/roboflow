@@ -3,8 +3,8 @@ from enum import Enum
 
 
 class Point(Model):
-    x: XmlAttr("x", int)
-    y: XmlAttr("y", int)
+    x: XmlAttr("x", float)
+    y: XmlAttr("y", float)
 
 
 class Action(Model):
